@@ -1,0 +1,9 @@
+1.Python 3.8+
+
+2.OpenCV
+
+3.PyTorch
+
+4.YOLOv5
+
+5.Scikit-learn
