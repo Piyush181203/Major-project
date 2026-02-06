@@ -1,12 +1,25 @@
-import torch
-import cv2
+# Vision-Based Intelligent Traffic Monitoring System
 
-class VehicleDetector:
-    def __init__(self, model_path="yolov5s.pt"):
-        self.model = torch.hub.load("ultralytics/yolov5", "custom", path=model_path)
+Rapid urbanization has led to frequent traffic congestion, longer travel times, and increased pollution.  
+This project proposes a **deep learning and computer vision-based system** that analyzes real-time traffic video streams to:
+- Detect vehicles
+- Estimate traffic density
+- Predict congestion levels
 
-    def detect(self, frame):
-        results = self.model(frame)
-        detections = results.xyxy[0].cpu().numpy()
-        vehicles = [d for d in detections if int(d[5]) in [2, 3, 5, 7]]  # car, bus, truck, motorcycle
-        return vehicles
+The system supports **data-driven decision-making** for smart transportation.
+
+---
+
+## Features
+- Vehicle detection using YOLOv5
+- Traffic density estimation
+- Congestion prediction with machine learning
+- Real-time video stream analysis
+
+---
+
+## Installation
+```bash
+git clone https://github.com/your-username/traffic-monitoring-system.git
+cd traffic-monitoring-system
+pip install -r requirements.txt
